@@ -1,0 +1,11 @@
+[package]
+name = "thetadb-ffi"
+version = "0.0.1"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+thetadb = { path = "../thetadb-core" }

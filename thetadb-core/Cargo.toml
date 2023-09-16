@@ -1,0 +1,17 @@
+[package]
+name = "thetadb"
+version = "0.0.1"
+authors = ["Tangent <tangent_w@outlook.com>"]
+description = "A lightweight, embedded key-value database for mobile clients (i.e., iOS, Android)."
+edition = "2021"
+
+repository = "https://github.com/TangentW/ThetaDB"
+license = "MIT"
+
+[dependencies]
+libc = "0.2"
+thiserror = "1.0"
+crc32fast = "1.3.2"
+
+[dev-dependencies]
+rand = "0.8.5"

@@ -1,0 +1,6 @@
+framework module ThetaDBFFI {
+    umbrella header "ThetaDBFFI.h"
+    
+    export *
+    module * { export * }
+}
