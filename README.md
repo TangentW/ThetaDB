@@ -1,7 +1,6 @@
 <div align="center">
 
 ![ThetaDB](assets/banner.svg)
-
 ![API](https://img.shields.io/badge/apis-Rust%20%7C%20Swift%20%7C%20Kotlin-6F9ECD?style=flat-square)
 [![Crates.io](https://img.shields.io/crates/v/thetadb?style=flat-square&color=6AACCC)](https://crates.io/crates/thetadb)
 [![Cocoapods Version](https://img.shields.io/cocoapods/v/ThetaDB?color=66B6CB&style=flat-square)](https://cocoapods.org/pods/ThetaDB)
