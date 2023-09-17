@@ -5,7 +5,7 @@
 [![Crates.io](https://img.shields.io/crates/v/thetadb?style=flat-square&color=6AACCC)](https://crates.io/crates/thetadb)
 [![Cocoapods Version](https://img.shields.io/cocoapods/v/ThetaDB?color=66B6CB&style=flat-square)](https://cocoapods.org/pods/ThetaDB)
 ![SPM](https://img.shields.io/badge/SPM-supported-63BECA?style=flat-square)
-[![License](https://img.shields.io/github/license/tangentW/ThetaDB?style=flat-square&color=60C3CA)](./LICENSE)
+[![codecov](https://codecov.io/gh/TangentW/ThetaDB/graph/badge.svg)](https://codecov.io/gh/TangentW/ThetaDB)
 
 A lightweight, embedded key-value database for mobile clients (i.e., iOS, Android), written in Rust.
 
