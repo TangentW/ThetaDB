@@ -6,7 +6,7 @@ use crate::{medium, meta, tx};
 pub type Result<T> = std::result::Result<T, Error>;
 
 /// All possible error cases that can be return by API calls in ThetaDB.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ErrorCode {
     /// An error occured during an I/O operation.
     IO,
