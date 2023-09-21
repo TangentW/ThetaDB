@@ -9,7 +9,7 @@
 
 A lightweight, embedded key-value database for mobile clients (i.e., iOS, Android), written in Rust.
 
-*⚠️ Still in development and testing, not yet ready for production use.*
+*⚠️ Still in testing, not yet ready for production use.*
 
 </div>
 
