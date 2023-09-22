@@ -20,6 +20,13 @@ pub struct FFICallState {
     err_desc: FFIBytes,
 }
 
+impl FFICallState {
+    const SUCCESS: FFICallState = FFICallState {
+        code: FFICallSuccess,
+        err_desc: FFIBytes::null(),
+    };
+}
+
 pub(crate) fn ffi_call<T, F>(state: &mut FFICallState, call: F) -> T
 where
     T: FFIDefault,
@@ -69,9 +76,9 @@ where
 impl<T> FFICallResult for thetadb::Result<T> {
     #[inline]
     fn call_state(&self) -> FFICallState {
-        FFICallState {
-            code: FFICallSuccess,
-            err_desc: FFIBytes::null(),
+        match self {
+            Ok(_) => FFICallState::SUCCESS,
+            Err(err) => err.call_state(),
         }
     }
 }

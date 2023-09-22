@@ -40,7 +40,7 @@ impl FFIBytes {
     }
 
     #[inline]
-    pub(crate) fn null() -> Self {
+    pub(crate) const fn null() -> Self {
         Self {
             ptr: ptr::null_mut(),
             length: 0,
