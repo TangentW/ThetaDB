@@ -33,5 +33,10 @@ let package = Package(
             name: "ThetaDBFFI",
             path: "ios/ThetaDBFFI.xcframework"
         ),
+        .testTarget(
+            name: "Benchmark",
+            dependencies: ["ThetaDB"],
+            path: "ios/Benchmark"
+        ),
     ]
 )
