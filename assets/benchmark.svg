@@ -1,0 +1,51 @@
+<svg width="931" height="514" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 931 514">
+<rect width="931" height="514" x="0" y="0" id="0" fill="none"></rect>
+<path d="M79.5 15.42L79.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M195.5 15.42L195.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M312.5 15.42L312.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M428.5 15.42L428.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M544.5 15.42L544.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M661.5 15.42L661.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M777.5 15.42L777.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M894.5 15.42L894.5 424" fill="none" stroke="#E0E6F1"></path>
+<path d="M79.5 424L79.5 15.42" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(908.76 424)" fill="#6E7079">ms</text>
+<path d="M79.2633 424.5L74.2633 424.5" fill="none" stroke="#6E7079"></path>
+<path d="M79.2633 288.5L74.2633 288.5" fill="none" stroke="#6E7079"></path>
+<path d="M79.2633 151.5L74.2633 151.5" fill="none" stroke="#6E7079"></path>
+<path d="M79.2633 15.5L74.2633 15.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(71.2633 355.9033)" fill="#6E7079">Initialize</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(71.2633 219.71)" fill="#6E7079">Read</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(71.2633 83.5167)" fill="#6E7079">Write</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(79.2633 432)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(195.62 432)" fill="#6E7079">30</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(311.9767 432)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(428.3333 432)" fill="#6E7079">90</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(544.69 432)" fill="#6E7079">120</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(661.0467 432)" fill="#6E7079">150</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(777.4033 432)" fill="#6E7079">180</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(893.76 432)" fill="#6E7079">210</text>
+<path d="M79.2633 303.4689l2.7926 0l0 30.8438l-2.7926 0Z" fill="#5470c6"></path>
+<path d="M79.2633 167.2756l60.8933 0l0 30.8438l-60.8933 0Z" fill="#5470c6"></path>
+<path d="M79.2633 31.0822l426.0593 0l0 30.8438l-426.0593 0Z" fill="rgb(84,112,198)"></path>
+<path d="M79.2633 204.2881l63.1041 0l0 30.8438l-63.1041 0Z" fill="#91cc75"></path>
+<path d="M79.2633 68.0948l231.511 0l0 30.8438l-231.511 0Z" fill="rgb(145,204,117)"></path>
+<path d="M79.2633 377.494l202.7709 0l0 30.8438l-202.7709 0Z" fill="#fac858"></path>
+<path d="M79.2633 241.3006l67.4481 0l0 30.8438l-67.4481 0Z" fill="#fac858"></path>
+<path d="M79.2633 105.1073l750.1514 0l0 30.8438l-750.1514 0Z" fill="rgb(250,200,88)"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(87.0559 318.8908)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">0.72</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(145.1567 182.6975)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">15.7</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(510.3227 46.5041)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">109.85</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(147.3674 219.71)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">16.27</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(315.7743 83.5167)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">59.69</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(287.0342 392.9159)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">52.28</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(151.7114 256.7225)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">17.39</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(834.4148 120.5292)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">193.41</text>
+<path d="M-5 -5l329.5667 0l0 24l-329.5667 0Z" transform="translate(305.7167 485)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(305.7167 485)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(305.7167 485)" fill="#333">ThetaDB</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(393.05 485)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(393.05 485)" fill="#333">ThetaDB In Transaction</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(559.2833 485)" fill="#fac858"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(559.2833 485)" fill="#333">MMKV</text>
+</svg>

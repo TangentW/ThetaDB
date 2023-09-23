@@ -399,7 +399,46 @@ while let (key, value) = try cursor.keyValue(), key != "G" {
 
 ## Benchmark
 
-🚧 Yet To Be Measured.
+![Benchmark](assets/benchmark.svg)
+
+|      Lib      | Write (ms) | Read (ms) | Initialize (ms) |
+| :-----------: | :--------: | :-------: | :-------------: |
+|    ThetaDB    |   109.85   |   15.70   |      0.72       |
+| ThetaDB In Tx |   59.69    |   16.27   |       N/A       |
+|     MMKV      |   193.41   |   17.39   |      52.28      |
+
+### Measure
+
+Running on iPhone 12 mini 128 GB, iOS 16.1.2.
+
+* **Write**
+
+    Measure: `Put 10000 records with 5000 random keys and values from 1 to 10000 in bytes length.`
+
+    ```swift
+    for i in 1 ... 10000 {
+        let key = String(arc4random_uniform(5000))
+        let value = Data(repeating: 1, count: i)
+        // Put key-value...
+    }
+    ```
+
+* **Read**
+
+    1. Put 10000 records with 5000 random keys and values from 1 to 10000 in bytes length.
+    2. Measure: `Get 10000 records with 5000 random keys.`
+
+    ```swift
+     for _ in 0 ..< 10000 {
+        let key = String(arc4random_uniform(5000))
+        // Get record...
+     }
+    ```
+
+* **Initialization**
+
+    1. Put 10000 records with 5000 random keys and values from 1 to 10000 in bytes length.
+    2. Measure: `Open then read a record with a random key.`
 
 ## License
 
