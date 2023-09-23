@@ -1,6 +1,6 @@
 [package]
 name = "thetadb"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Tangent <tangent_w@outlook.com>"]
 description = "A lightweight, embedded key-value database for mobile clients (i.e., iOS, Android)."
 edition = "2021"

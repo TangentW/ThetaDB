@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ThetaDB"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
 
   spec.summary      = "A lightweight, embedded key-value database for mobile clients."
   spec.description  = <<-DESC
