@@ -2,12 +2,11 @@ use core::slice;
 use std::{
     alloc,
     alloc::Layout,
-    cell::RefCell,
     mem,
     mem::ManuallyDrop,
     ops::{Deref, DerefMut},
     ptr::NonNull,
-    rc::Rc,
+    sync::{Arc, Mutex},
 };
 
 /// A struct representing a memory pool that manages memory cells.
@@ -17,7 +16,7 @@ use std::{
 /// allocating and deallocating memory.
 #[derive(Clone)]
 pub(crate) struct MemoryPool {
-    inner: Rc<Inner>,
+    inner: Arc<Inner>,
 }
 
 /// A struct representing a memory cell.
@@ -31,7 +30,7 @@ pub(crate) struct MemoryCell {
 struct Inner {
     capacity: usize,
     cell_layout: Layout,
-    recycle_chain: RefCell<RecycleChain>,
+    recycle_chain: Mutex<RecycleChain>,
 }
 
 impl MemoryPool {
@@ -42,7 +41,7 @@ impl MemoryPool {
     pub(crate) fn new(cell_len: usize, capacity: usize) -> Self {
         let cell_layout = Layout::from_size_align(cell_len, Self::CELL_ALIGN).expect("impossible");
 
-        let recycle_chain = RefCell::new(RecycleChain::new());
+        let recycle_chain = Mutex::new(RecycleChain::new());
 
         let inner = Inner {
             capacity,
@@ -51,7 +50,7 @@ impl MemoryPool {
         };
 
         Self {
-            inner: Rc::new(inner),
+            inner: Arc::new(inner),
         }
     }
 
@@ -69,7 +68,8 @@ impl MemoryPool {
     fn obtain_raw_cell(&self) -> RawCell {
         self.inner
             .recycle_chain
-            .borrow_mut()
+            .lock()
+            .unwrap()
             .pop_cell()
             .unwrap_or_else(|| RawCell::new(self.inner.cell_layout))
     }
@@ -79,7 +79,7 @@ impl MemoryPool {
     /// If the pool is already at capacity, the cell is dropped.
     #[inline]
     fn recycle_raw_cell(&self, raw_cell: RawCell) {
-        let mut recycle_chain = self.inner.recycle_chain.borrow_mut();
+        let mut recycle_chain = self.inner.recycle_chain.lock().unwrap();
         if recycle_chain.len < self.inner.capacity {
             recycle_chain.push_cell(raw_cell);
         }
@@ -181,6 +181,8 @@ impl Drop for RawCell {
     }
 }
 
+unsafe impl Send for RawCell {}
+
 /// A struct representing a node in the recycle chain.
 struct RecycleNode {
     cell: RawCell,
@@ -228,30 +230,30 @@ mod tests {
     fn test_mempool() {
         const CAPACITY: usize = 4;
         let pool = MemoryPool::new(20, CAPACITY);
-        assert_eq!(pool.inner.recycle_chain.borrow().len, 0);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, 0);
 
         let cell_0 = pool.obtain_cell();
         let cell_1 = pool.obtain_cell();
-        assert_eq!(pool.inner.recycle_chain.borrow().len, 0);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, 0);
 
         drop(cell_0);
         drop(cell_1);
-        assert_eq!(pool.inner.recycle_chain.borrow().len, 2);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, 2);
 
         let cell_0 = pool.obtain_cell();
-        assert_eq!(pool.inner.recycle_chain.borrow().len, 1);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, 1);
 
         let cell_1 = pool.obtain_cell();
         let cell_2 = pool.obtain_cell();
         let cell_3 = pool.obtain_cell();
         let cell_4 = pool.obtain_cell();
-        assert_eq!(pool.inner.recycle_chain.borrow().len, 0);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, 0);
 
         drop(cell_0);
         drop(cell_1);
         drop(cell_2);
         drop(cell_3);
         drop(cell_4);
-        assert_eq!(pool.inner.recycle_chain.borrow().len, CAPACITY);
+        assert_eq!(pool.inner.recycle_chain.lock().unwrap().len, CAPACITY);
     }
 }

@@ -225,3 +225,6 @@ impl Drop for Mmap {
         }
     }
 }
+
+unsafe impl Send for Mmap {}
+unsafe impl Sync for Mmap {}
