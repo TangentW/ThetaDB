@@ -77,8 +77,10 @@ where
                 let index = leaf.search(key)?;
 
                 // Delete overflow chunk of key.
-                if let Ok(idx) = index && let Value::Overflowed { page_id } = leaf.entry(idx)?.value {
-                    self.index.delete_chunk(page_id)?;
+                if let Ok(idx) = index {
+                    if let Value::Overflowed { page_id } = leaf.entry(idx)?.value {
+                        self.index.delete_chunk(page_id)?;
+                    }
                 }
 
                 // If the value is overflow, then store it in new overflow pages (Chunk pages).
@@ -154,9 +156,11 @@ where
 
         self.delete_inner(&mut root, key)?;
 
-        if let Node::Branch(root) = root && root.count() == 1 {
-            self.index.set_root_id(root.page_id(0)?);
-            self.index.delete(root_id);
+        if let Node::Branch(root) = root {
+            if root.count() == 1 {
+                self.index.set_root_id(root.page_id(0)?);
+                self.index.delete(root_id);
+            }
         }
 
         Ok(())

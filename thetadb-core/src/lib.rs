@@ -192,14 +192,14 @@
 //! Or we can perform range queries on ThetaDB in this way:
 //!
 //! ```
-//! # #![feature(let_chains)]
 //! # use thetadb::{ThetaDB, Result};
 //! # fn try_main() -> Result<()> {
 //! # let db = ThetaDB::open("target/db.theta")?;
 //! let mut cursor = db.cursor_from_key(b"C")?;
-//! // Enable `let_chains` feature, should add `#![feature(let_chains)]`
-//! // to the crate attributes.
-//! while let Some((key, value)) = cursor.key_value()? && key != b"G" {
+//! while let Some((key, value)) = cursor.key_value()? {
+//!     if key == b"G" {
+//!         break;
+//!     }
 //!     println!("{:?} => {:?}", key, value);
 //!     cursor.next()?;
 //! }
@@ -214,7 +214,6 @@
 //! follows the transaction considerations mentioned above.
 //!
 
-#![feature(let_chains)]
 #![allow(clippy::unit_arg)]
 
 mod bptree;

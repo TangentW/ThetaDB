@@ -127,7 +127,11 @@ impl Freelist {
             for idx in window.start..=window.end {
                 self.bitmap[(idx / BitmapWord::BITS) as usize] &= !(1 << (idx % BitmapWord::BITS));
             }
-            while let Some(last) = self.bitmap.last() && *last == 0 {
+            while if let Some(last) = self.bitmap.last() {
+                *last == 0
+            } else {
+                false
+            } {
                 self.bitmap.pop();
             }
         }

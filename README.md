@@ -370,9 +370,10 @@ Or we can perform range queries on ThetaDB in this way:
 
 ```rust 
 let mut cursor = db.cursor_from_key(b"C")?;
-// Enable `let_chains` feature, should add `#![feature(let_chains)]`
-// to the crate attributes.
-while let Some((key, value)) = cursor.key_value()? && key != b"G" {
+while let Some((key, value)) = cursor.key_value()? {
+    if key == b"G" {
+        break;
+    }
     println!("{:?} => {:?}", key, value);
     cursor.next()?;
 }
